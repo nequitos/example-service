@@ -1,0 +1,31 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ".:/usr/project"
+    env_file:
+      - .env
+    environment:
+      - SQL_ALCHEMY_DATABASE_URL=${SQL_ALCHEMY_DATABASE_URL}
+    ports:
+      - "5001:5000"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16.4-alpine3.20
+    user: postgres
+    environment:
+      - POSTGRES_DB=example
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "6543:5432"
+#    healthcheck:
+#      test: ["CMD", "curl", "-f", "http://localhost"]
+#      interval: 1m30s
+#      timeout: 10s
+#      retries: 3
+#      start_period: 40s

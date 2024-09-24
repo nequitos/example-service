@@ -1,0 +1,11 @@
+
+# --- Python environment --- #
+__pycache__
+venv
+
+# --- IDE environment --- #
+.idea
+.vscode
+
+# --- Other environment --- #
+.env

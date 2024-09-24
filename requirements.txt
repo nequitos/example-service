@@ -1,0 +1,12 @@
+
+# --- ASGI depends --- #
+fastapi==0.115.0
+uvicorn==0.30.6
+
+# --- Database depends --- #
+sqlalchemy==2.0.35
+asyncpg==0.29.0
+
+# --- Typing depends --- #
+pydantic==2.9.2
+environs==11.0.0
